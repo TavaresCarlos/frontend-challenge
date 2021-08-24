@@ -1,36 +1,31 @@
 <template>
-  <v-container class="grey lighten-5">
-    <v-row no-gutters>
-      <v-col>
-      </v-col>
-      <v-col order="12">
-        <v-card
-          class="pa-2"
-          tile
-        >
-        <div id="login">
-          <form>
+  <v-app>
+    <v-container fill-height fluid>
+      <v-row justify="center" align="center">
+        <v-col cols="12" sm="8" md="6">
+          <v-card>
+          <div id="login">
             <v-text-field
               label="Email"
               :rules="emailRules"
               hide-details="auto"
+              required
             ></v-text-field>
             <v-text-field 
               label="Senha" 
               type="password"
+              required
             ></v-text-field>
-            <v-btn block tile> 
+            <v-btn block tile @click="validacao"> 
               Entrar
             </v-btn>
-          </form>
-        </div>
+          </div>
 
-        </v-card>
-      </v-col>
-      <v-col order="1">
-      </v-col>
-    </v-row>
-  </v-container>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+</v-app>
 </template>
 
 <script>
@@ -42,13 +37,18 @@
       emailRules: [ 
         value => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || 'Informe um email válido'
       ]
-    })
+    }),
+    methods: {
+      validacao () {
+        this.$router.push('/home')
+      }
+    }
   }
 </script>
 
 <style scopped>
 #login{
-  padding: 10% 10% 10% 10%;
+  padding: 10% 5% 10% 5%;
   border-radius:  0px;
 }
 #login{
