@@ -16,7 +16,7 @@
               type="password"
               required
             ></v-text-field>
-            <v-btn block tile @click="validacao"> 
+            <v-btn block tile @click="login"> 
               Entrar
             </v-btn>
           </div>
@@ -39,7 +39,8 @@
       ]
     }),
     methods: {
-      validacao () {
+      login (e) {
+        this.$store.commit('login', e.target.value);
         this.$router.push('/home')
       }
     }

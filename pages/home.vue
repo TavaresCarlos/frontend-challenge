@@ -5,6 +5,12 @@
 				<v-col cols="12" sm="12" md="12">
 					<div class="text--primary font-weight-black">
 						<h1>Navers</h1>
+						<v-btn
+					  elevation="1"
+					  @click="logout"
+						>
+							Sair
+						</v-btn>
 					</div>
 				</v-col>
 			</v-row>
@@ -14,5 +20,11 @@
 
 <script>
   export default {
-  }
+	 	methods: {
+	    logout (e) {
+	      this.$store.commit('logout', e.target.value);
+	      this.$router.push('/')
+	    }
+	  }
+ 	}
 </script>
