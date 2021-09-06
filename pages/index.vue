@@ -40,8 +40,11 @@
     }),
     methods: {
       login () {
+        this.$store.dispatch('fetch')
+          .then(({ data }) => console.log(data) )
+
         this.$store.dispatch('login')
-        this.$router.push('/home')
+        //this.$router.push('/home')
       }
     }
   }
