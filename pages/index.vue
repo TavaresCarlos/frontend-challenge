@@ -39,8 +39,8 @@
       ]
     }),
     methods: {
-      login (e) {
-        this.$store.commit('login', e.target.value);
+      login () {
+        this.$store.dispatch('login')
         this.$router.push('/home')
       }
     }

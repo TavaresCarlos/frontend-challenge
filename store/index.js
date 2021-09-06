@@ -3,20 +3,25 @@ export const state = () => ({
 })
 
 export const mutations = {
-	login(state) {
+	setTrue(state) {
 		state.authenticated = true;
 		console.log(state.authenticated);
 	},
-	logout(state) {
+	setFalse(state) {
 		state.authenticated = false;
 		console.log(state.authenticated);
 	}
 }
 
-export const actions = () => ({
+export const actions = {
+	login({ commit }) {
+		commit('setTrue')
+	},
+	logout({ commit }) {
+		commit('setFalse')
+	}
+}
 
-})
-
-export const getters = () => ({
+export const getters = {
+}
 	
-})

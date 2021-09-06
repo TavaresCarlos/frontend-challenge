@@ -21,8 +21,8 @@
 <script>
   export default {
 	 	methods: {
-	    logout (e) {
-	      this.$store.commit('logout', e.target.value);
+	    logout () {
+	      this.$store.dispatch('logout');
 	      this.$router.push('/')
 	    }
 	  }
