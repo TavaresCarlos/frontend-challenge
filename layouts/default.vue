@@ -1,8 +1,11 @@
 <template>
-  <v-app dark>
+  <v-app>
     <v-app-bar fixed app>
       <v-toolbar-title>
-        nave.rs
+        <v-img
+          max-width="150"
+          src="/img/logo.png"
+        ></v-img>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-slide-x-transition></v-slide-x-transition>
